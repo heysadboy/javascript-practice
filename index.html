@@ -3,11 +3,32 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
     <title>JavaScript Practice</title>
 </head>
 
 <body>
-    <button id="start" onclick="hello()">Test</button>
+    <div class="ui container">
+        <h2>JavaScript Asynchronous</h2>
+        <div class="ui grid">
+            <div class="four wide column">
+                <div class="ui vertical buttons">
+                    <button class="ui green button" id="timeout" onclick="timeout_test()">Timeout</button>
+                    <button class="ui blue button" id="callback" onclick="callback_test()">Callback</button>
+                    <button class="ui orange button" id="promise" onclick="promise_test()">Promise</button>
+                    <button class="ui pink button" id="async_await" onclick="async_await_test()">Async/Await</button>
+                    <button class="ui purple button" id="setinterval" onclick="setinterval_test()">Set Interval</button>
+                </div>
+            </div>
+            <div class="twelve wide column">
+                <div class="ui segment">
+                    <h3 id="choice">Click any button to test!</h3>
+                    <p id="action"></p>
+                    <p id="output"></p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="myscript.js"></script>
 
