@@ -78,3 +78,27 @@ const set_error = () => {
 const call_back = (print_name, text) => {
     print_name(text);
 };
+
+const process_data = (data) => {
+    let lines = data.split('\n');
+    let headers = lines[0].split(';');
+    let result = [];
+
+    for (let i = 1; i < lines.length; i++) {
+        let line = lines[i].split(';');
+        let result_item = {};
+        for (let j = 0; j < line.length; j++) {
+            result_item[headers[j]] = line[j];
+        }
+        result.push(result_item);
+    }
+
+    return result;
+};
+
+const read_csv = () => {
+    fetch('authors.csv')
+        .then(data => data.text())
+        .then(response => console.log(process_data(response)));
+};
+
