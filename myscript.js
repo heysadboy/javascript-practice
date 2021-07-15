@@ -3,6 +3,8 @@ const timeout_test = () => {
     document.getElementById("action").innerHTML = "<b>Hello!</b> will appear after 3 seconds!";
     const text = "Hello!";
     setTimeout(set_text, 3000, text);
+
+    test();
 };
 
 const callback_test = () => {
@@ -101,4 +103,31 @@ const read_csv = () => {
         .then(data => data.text())
         .then(response => console.log(process_data(response)));
 };
+
+const test = () => {
+    let A = [
+        "done",
+        "enod",
+        "chunli",
+        "ilnuhc",
+        "oden"
+    ]
+
+    let map = new Map();
+
+    for (let i in A) {
+        temp = [...A[i]].sort().join("");
+        if (!map.has(temp)) {
+            map.set(temp, A[i]);
+        }
+    }
+    let ans = [];
+    for (let value of map.values()) {
+        ans.push(value)
+    }
+
+    console.log(ans);
+};
+
+
 
